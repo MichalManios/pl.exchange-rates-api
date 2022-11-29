@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/status/ping", produces = MediaType.APPLICATION_JSON_VALUE)
-public class StringResponseController {
+public class MessageController {
 
     @GetMapping
     ResponseEntity<String> getString() {
-        return new ResponseEntity<>(StringResponse.getResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(Message.getResponse(), HttpStatus.OK);
     }
+
 }

@@ -4,9 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-public class IncorrectDataException extends RuntimeException {
+public class IncorrectDataException$UnprecessableEntity extends RuntimeException {
 
-    public IncorrectDataException(String message) {
+    public IncorrectDataException$UnprecessableEntity(String message) {
         super(message);
     }
+
 }

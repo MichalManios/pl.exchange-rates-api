@@ -1,7 +1,7 @@
 package pl.xcodesoftware.exchangerate.numbersort;
 
 import org.springframework.stereotype.Service;
-import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException;
+import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
 import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersSorted;
 import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersToSort;
 import pl.xcodesoftware.exchangerate.numbersort.dto.OrderType;
@@ -16,7 +16,7 @@ public class NumberSortService {
 
     public NumbersSorted getSortedNumbers(NumbersToSort numbersToSort) {
         validateData(numbersToSort);
-        return  new NumbersSorted(sortNumbers(numbersToSort.getNumbers(), numbersToSort.getOrder()));
+        return new NumbersSorted(sortNumbers(numbersToSort.getNumbers(), numbersToSort.getOrder()));
     }
 
     private List<Integer> sortNumbers(List<Integer> numbers, OrderType order) {
@@ -40,7 +40,8 @@ public class NumberSortService {
 
     private void isNumbersNull(NumbersToSort numbersToSort) {
         if (Objects.isNull(numbersToSort.getNumbers())) {
-            throw new IncorrectDataException("Numbers to sort is null. Cannot be sorted.");
+            throw new IncorrectDataException$UnprecessableEntity("Numbers to sort is null. Cannot be sorted.");
         }
     }
+
 }
