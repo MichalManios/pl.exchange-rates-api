@@ -48,9 +48,9 @@ class NumberSortControllerTest {
 
         mockMvc.perform(post("/numbers/sort-command")
                         .contentType(APPLICATION_JSON_UTF8)
-                .content(toJsonString(numberToSort)))
+                        .content(toJsonString(numberToSort)))
                 .andExpect(status().isOk())
-                .andExpect(content().json(toJsonString(expectedSortedNumbers)));
+                .andExpect(content().string(toJsonString(expectedSortedNumbers)));
 
         verify(service).getSortedNumbers(numberToSort);
     }
