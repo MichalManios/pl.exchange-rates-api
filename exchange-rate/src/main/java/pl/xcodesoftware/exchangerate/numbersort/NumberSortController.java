@@ -19,7 +19,7 @@ public class NumberSortController {
     private final NumberSortService service;
 
     @PostMapping
-    public ResponseEntity<NumbersSorted> add(@RequestBody NumbersToSort numbersToSort) {
+    public ResponseEntity<NumbersSorted> getSortedNumbers(@RequestBody NumbersToSort numbersToSort) {
         return new ResponseEntity<>(service.getSortedNumbers(numbersToSort), HttpStatus.OK);
     }
 
