@@ -91,8 +91,8 @@ class NumberSortControllerTest {
     }
 
     @Test
-    @DisplayName("Should throw exception if numbers in NumbersToSort is null and status UnprocessableEntity")
-    void should_throw_exception_if_numbers_in_numbers_to_sort_is_null_and_return_unprecessable_entity() throws Exception {
+    @DisplayName("Should throw exception if numbers in NumbersToSort is null and return status UnprocessableEntity")
+    void should_throw_exception_if_numbers_in_numbers_to_sort_is_null_and_return_unprocessable_entity() throws Exception {
         var numbersToSort = new NumbersToSort(null, OrderType.ASC);
 
         doThrow(new IncorrectDataException$UnprecessableEntity("Numbers to sort is null. Cannot be sorted."))

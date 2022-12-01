@@ -37,7 +37,7 @@ class NbpServiceTest {
 
     @Test
     @DisplayName("Should return NbpExchangeRate")
-    void should_return_contractor_json_by_nip() {
+    void should_return_nbp_exchange_rate() {
         var currencyShortcut = new CurrencyShortcut("USD");
 
         var rate = new Rate();

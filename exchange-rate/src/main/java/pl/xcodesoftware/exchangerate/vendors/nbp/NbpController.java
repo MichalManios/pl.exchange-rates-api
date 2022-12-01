@@ -19,7 +19,7 @@ class NbpController {
     private final NbpService service;
 
     @PostMapping
-    public ResponseEntity<ExchangeRate> add(@RequestBody CurrencyShortcut currencyShortcut) {
+    public ResponseEntity<ExchangeRate> getExchangeRate(@RequestBody CurrencyShortcut currencyShortcut) {
         return new ResponseEntity<>(service.getExchangeRate(currencyShortcut), HttpStatus.OK);
     }
 
