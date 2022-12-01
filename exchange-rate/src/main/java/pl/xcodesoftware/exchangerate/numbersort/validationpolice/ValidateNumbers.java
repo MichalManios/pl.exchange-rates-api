@@ -3,20 +3,20 @@ package pl.xcodesoftware.exchangerate.numbersort.validationpolice;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
-import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersToSort;
 
+import java.util.List;
 import java.util.Objects;
 
 @Service
 @AllArgsConstructor
-public class ValidateNumbers {
+class ValidateNumbers {
 
-    public void validate(NumbersToSort numbersToSort) {
-        isNumbersNull(numbersToSort);
+    public void validate(List<Integer> numbers) {
+        isNumbersNull(numbers);
     }
 
-    private void isNumbersNull(NumbersToSort numbersToSort) {
-        if (Objects.isNull(numbersToSort.getNumbers())) {
+    private void isNumbersNull(List<Integer> numbers) {
+        if (Objects.isNull(numbers)) {
             throw new IncorrectDataException$UnprecessableEntity("Numbers to sort is null. Cannot be sorted.");
         }
     }

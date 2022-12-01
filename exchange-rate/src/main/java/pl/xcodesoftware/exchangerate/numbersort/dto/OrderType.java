@@ -21,9 +21,7 @@ public enum OrderType {
 
     private final String formatted;
 
-    OrderType(String formatted) {
-        this.formatted = formatted;
-    }
+    OrderType(String formatted) { this.formatted = formatted; }
 
     @JsonCreator
     public static OrderType fromString(String string) {

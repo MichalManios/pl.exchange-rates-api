@@ -14,7 +14,7 @@ import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersToSort;
 @RestController
 @RequestMapping(value = "/numbers/sort-command", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
-public class NumberSortController {
+class NumberSortController {
 
     private final NumberSortService service;
 

@@ -12,7 +12,7 @@ import pl.xcodesoftware.exchangerate.vendors.nbp.dto.NbpExchangeRate;
 
 @Service
 @Slf4j
-public class NbpClient {
+class NbpClient {
 
     private final String URI_NBP = "https://api.nbp.pl/api/exchangerates/rates/A/";
 

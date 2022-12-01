@@ -15,12 +15,12 @@ import static pl.xcodesoftware.exchangerate.numbersort.dto.OrderType.ASC;
 
 @Service
 @AllArgsConstructor
-public class NumberSortService {
+class NumberSortService {
 
     private final NumbersPoliceStrategy numbersPoliceStrategy;
 
     public NumbersSorted getSortedNumbers(NumbersToSort numbersToSort) {
-        numbersPoliceStrategy.validateOnSort(numbersToSort);
+        numbersPoliceStrategy.validateOnSort(numbersToSort.getNumbers());
         return new NumbersSorted(sortNumbers(numbersToSort.getNumbers(), numbersToSort.getOrder()));
     }
 

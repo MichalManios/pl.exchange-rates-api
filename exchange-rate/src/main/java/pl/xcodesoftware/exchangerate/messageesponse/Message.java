@@ -1,9 +1,11 @@
 package pl.xcodesoftware.exchangerate.messageesponse;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class Message {
+@Data
+class Message {
 
     private final static String response = "pong";
 

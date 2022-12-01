@@ -14,7 +14,7 @@ import pl.xcodesoftware.exchangerate.vendors.nbp.dto.ExchangeRate;
 @RestController
 @RequestMapping(value = "/currencies/get-current-currency-value-command", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
-public class NbpController {
+class NbpController {
 
     private final NbpService service;
 

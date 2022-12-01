@@ -1,5 +1,6 @@
 package pl.xcodesoftware.exchangerate.numbersort.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Data
 public class NumbersToSort extends NumbersSorted{
 
     @NotNull

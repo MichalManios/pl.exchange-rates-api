@@ -8,7 +8,7 @@ import pl.xcodesoftware.exchangerate.vendors.nbp.dto.ExchangeRate;
 
 @Service
 @AllArgsConstructor
-public class NbpService {
+class NbpService {
 
     private final NbpClient nbpClient;
 
