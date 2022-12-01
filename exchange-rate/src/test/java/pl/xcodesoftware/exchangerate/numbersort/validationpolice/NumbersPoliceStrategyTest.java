@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
+import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprocessableEntity;
 
 import java.util.List;
 
@@ -51,12 +51,12 @@ class NumbersPoliceStrategyTest {
     void should_throw_exception_if_numbers_is_null() {
         numberPoliceStrategy.validateOnSort(isNull());
 
-        doThrow(new IncorrectDataException$UnprecessableEntity("Numbers to sort is null. Cannot be sorted."))
+        doThrow(new IncorrectDataException$UnprocessableEntity("Numbers to sort is null. Cannot be sorted."))
                 .when(validateNumbers).validate(isNull());
 
         assertThatThrownBy(() -> numberPoliceStrategy.validateOnSort(isNull()))
                 .hasMessage("Numbers to sort is null. Cannot be sorted.")
-                .isExactlyInstanceOf(IncorrectDataException$UnprecessableEntity.class);
+                .isExactlyInstanceOf(IncorrectDataException$UnprocessableEntity.class);
     }
 
 }

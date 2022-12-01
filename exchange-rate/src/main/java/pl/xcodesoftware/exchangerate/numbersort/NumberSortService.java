@@ -25,10 +25,10 @@ class NumberSortService {
     }
 
     private List<Integer> sortNumbers(List<Integer> numbers, OrderType order) {
-        return numbers.stream().sorted(compareByOrder(order)).collect(Collectors.toList());
+        return numbers.stream().sorted(compareUsingOrderType(order)).collect(Collectors.toList());
     }
 
-    private Comparator<Integer> compareByOrder(OrderType orderType) {
+    private Comparator<Integer> compareUsingOrderType(OrderType orderType) {
         return orderType.equals(ASC) ? Comparator.naturalOrder() : Comparator.reverseOrder();
     }
 

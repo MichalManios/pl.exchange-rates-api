@@ -2,7 +2,7 @@ package pl.xcodesoftware.exchangerate.numbersort.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Getter;
-import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
+import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprocessableEntity;
 
 import java.util.Map;
 import java.util.Optional;
@@ -26,7 +26,7 @@ public enum OrderType {
     @JsonCreator
     public static OrderType fromString(String string) {
         return Optional.ofNullable(FORMAT_MAP.get(string))
-                .orElseThrow(() -> new IncorrectDataException$UnprecessableEntity(String.format("The word %1$s is incorrect.", string)));
+                .orElseThrow(() -> new IncorrectDataException$UnprocessableEntity(String.format("The word %1$s is incorrect.", string)));
     }
 
 }

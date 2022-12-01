@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
+import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprocessableEntity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -29,7 +29,7 @@ class OrderTypeTest {
     void throw_exception_if_string_is_not_value_of_order_type() {
         assertThatThrownBy(() -> OrderType.fromString("asc"))
                 .hasMessage("The word asc is incorrect.")
-                .isExactlyInstanceOf(IncorrectDataException$UnprecessableEntity.class);
+                .isExactlyInstanceOf(IncorrectDataException$UnprocessableEntity.class);
     }
 
 }

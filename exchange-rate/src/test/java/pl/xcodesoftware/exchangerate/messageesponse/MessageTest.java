@@ -15,4 +15,5 @@ class MessageTest {
     void should_return_string_equal_pong() {
         assertThat(Message.getResponse()).isEqualTo("pong");
     }
+
 }

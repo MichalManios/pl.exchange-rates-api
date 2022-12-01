@@ -8,7 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
+import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprocessableEntity;
 import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersSorted;
 import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersToSort;
 import pl.xcodesoftware.exchangerate.numbersort.dto.OrderType;
@@ -16,7 +16,9 @@ import pl.xcodesoftware.exchangerate.numbersort.dto.OrderType;
 import java.util.Arrays;
 
 import static java.util.Collections.EMPTY_LIST;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -95,7 +97,7 @@ class NumberSortControllerTest {
     void should_throw_exception_if_numbers_in_numbers_to_sort_is_null_and_return_unprocessable_entity() throws Exception {
         var numbersToSort = new NumbersToSort(null, OrderType.ASC);
 
-        doThrow(new IncorrectDataException$UnprecessableEntity("Numbers to sort is null. Cannot be sorted."))
+        doThrow(new IncorrectDataException$UnprocessableEntity("Numbers to sort is null. Cannot be sorted."))
                 .when(service).getSortedNumbers(numbersToSort);
 
         mockMvc.perform(post("/numbers/sort-command")

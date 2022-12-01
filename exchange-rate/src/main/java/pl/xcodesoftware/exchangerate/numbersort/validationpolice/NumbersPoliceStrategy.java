@@ -14,4 +14,5 @@ public class NumbersPoliceStrategy {
     public void validateOnSort(List<Integer> numbers) {
         validateNumbers.validate(numbers);
     }
+
 }

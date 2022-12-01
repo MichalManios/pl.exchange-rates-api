@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprecessableEntity;
+import pl.xcodesoftware.exchangerate.common.exception.IncorrectDataException$UnprocessableEntity;
 import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersSorted;
 import pl.xcodesoftware.exchangerate.numbersort.dto.NumbersToSort;
 import pl.xcodesoftware.exchangerate.numbersort.validationpolice.NumbersPoliceStrategy;
@@ -82,12 +82,12 @@ class NumberSortServiceTest {
     void should_throw_exception_if_numbers_in_numbers_to_sort_is_null() {
         var numbersToSort = new NumbersToSort(null, ASC);
 
-        doThrow(new IncorrectDataException$UnprecessableEntity("Numbers to sort is null. Cannot be sorted."))
+        doThrow(new IncorrectDataException$UnprocessableEntity("Numbers to sort is null. Cannot be sorted."))
                 .when(numbersPoliceStrategy).validateOnSort(numbersToSort.getNumbers());
 
         assertThatThrownBy(() -> service.getSortedNumbers(numbersToSort))
                 .hasMessage("Numbers to sort is null. Cannot be sorted.")
-                .isExactlyInstanceOf(IncorrectDataException$UnprecessableEntity.class);
+                .isExactlyInstanceOf(IncorrectDataException$UnprocessableEntity.class);
     }
 
 }
