@@ -1,4 +1,4 @@
-package pl.xcodesoftware.exchangerate.stringresponse;
+package pl.xcodesoftware.exchangerate.messageesponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

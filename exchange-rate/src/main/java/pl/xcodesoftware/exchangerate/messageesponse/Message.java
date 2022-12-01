@@ -1,4 +1,4 @@
-package pl.xcodesoftware.exchangerate.stringresponse;
+package pl.xcodesoftware.exchangerate.messageesponse;
 
 import lombok.NoArgsConstructor;
 
